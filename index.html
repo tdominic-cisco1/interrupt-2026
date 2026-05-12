@@ -447,10 +447,46 @@ body {
 #s12 .the-line { font-family: var(--f-disp); font-size: 64px; font-weight: 800; letter-spacing: -.052em; color: var(--c-pass); line-height: 1; }
 #s12 .footer { margin-top: 44px; font-size: 19px; color: var(--c-t4); letter-spacing: -.016em; max-width: 860px; line-height: 1.6; }
 
+
+#s12 .statement { font-family: var(--f-disp); font-size: 96px; font-weight: 800; line-height: .92; letter-spacing: -.06em; color: var(--c-t1); max-width: 1080px; }
+#s12 .line2 { font-family: var(--f-disp); font-size: 40px; font-weight: 600; letter-spacing: -.04em; color: var(--c-t3); margin-top: 28px; max-width: 920px; line-height: 1.3; }
+#s12 .the-line { font-family: var(--f-disp); font-size: 64px; font-weight: 800; letter-spacing: -.052em; color: var(--c-pass); line-height: 1; }
+#s12 .footer { margin-top: 44px; font-size: 19px; color: var(--c-t4); letter-spacing: -.016em; max-width: 860px; line-height: 1.6; }
+
+
+/* ── VIEWPORT SCALING ── */
+html, body { width: 100%; overflow-x: hidden; }
+
+.slide-wrap {
+  width: 100%;
+  height: calc(900px * var(--ss, 1));
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.slide {
+  position: absolute !important;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(var(--ss, 1)) !important;
+  transform-origin: top center;
+  margin: 0 !important;
+}
+
 </style>
 </head>
 <body>
 
+<script>
+(function(){
+  function ss(){
+    var s=Math.min(1,(window.innerWidth-16)/1600);
+    document.documentElement.style.setProperty('--ss',s);
+  }
+  ss();
+  window.addEventListener('resize',ss);
+})();
+</script>
 <div class="nav">
   <a href="#s01">01 · Cover</a>
   <a href="#s02">02 · Production Reality</a>
@@ -469,6 +505,7 @@ body {
 </div>
 
 
+<div class="slide-wrap">
 <!-- ═══════════ S01 COVER ═══════════ -->
 <div class="slide" id="s01">
   <div class="glow-tl"></div><div class="glow-br"></div>
@@ -485,7 +522,9 @@ body {
     </div>
   </div>
 </div>
+</div>
 
+<div class="slide-wrap">
 <!-- ═══════════ S02 PRODUCTION REALITY ═══════════ -->
 <div class="slide" id="s02">
   <div class="glow-tl"></div>
@@ -502,8 +541,9 @@ body {
     </div>
   </div>
 </div>
+</div>
 
-
+<div class="slide-wrap">
 <!-- ═══════════ S03 FULL SYSTEM DIAGRAM ═══════════ -->
 <div class="slide slide--diagram" id="s03">
   <div class="glow-tl"></div>
@@ -613,8 +653,9 @@ body {
 
   </div>
 </div>
+</div>
 
-
+<div class="slide-wrap">
 <!-- ═══════════ S04 ACI CHAPTER TITLE ═══════════ -->
 <div class="slide" id="s04">
   <div class="glow-tl"></div>
@@ -631,7 +672,9 @@ body {
     </div>
   </div>
 </div>
+</div>
 
+<div class="slide-wrap">
 <!-- ═══════════ S05 NAC VALIDATE CALLOUT ═══════════ -->
 <div class="slide" id="s05">
   <div class="glow-tl"></div>
@@ -642,7 +685,9 @@ body {
     <div class="accent">The agent is evaluated to the exact same standard as an engineer.</div>
   </div>
 </div>
+</div>
 
+<div class="slide-wrap">
 <!-- ═══════════ S06 ACI LOOP DIAGRAM ═══════════ -->
 <div class="slide slide--diagram" id="s06">
   <div class="glow-tl"></div>
@@ -721,8 +766,9 @@ body {
 
   </div>
 </div>
+</div>
 
-
+<div class="slide-wrap">
 <!-- ═══════════ S07 GPT-5.1-MINI ═══════════ -->
 <div class="slide" id="s07">
   <div class="glow-tl"></div>
@@ -737,8 +783,9 @@ body {
     <div class="body">LangGraph enables per-subgraph model targeting. Right-size the model to the task. For structured generation with well-retrieved schema context, the smaller model performs identically. The decision was cost.</div>
   </div>
 </div>
+</div>
 
-
+<div class="slide-wrap">
 <!-- ═══════════ S09 BRIDGE (real) ═══════════ -->
 <div class="slide" id="s08">
   <div class="glow-tl"></div>
@@ -768,7 +815,9 @@ body {
     </div>
   </div>
 </div>
+</div>
 
+<div class="slide-wrap">
 <!-- ═══════════ S10 TWO FORMS ═══════════ -->
 <div class="slide" id="s09">
   <div class="glow-tl"></div>
@@ -806,15 +855,14 @@ body {
     <div class="verdict">Both paths run through the <em>same external deterministic validator</em>: NAC Validate. Different correction loops. Same quality gate.</div>
   </div>
 </div>
+</div>
 
-
-<!-- ═══════════ S10 SD-WAN — CHAPTER + RAG CALLOUT COMBINED ═══════════ -->
+<div class="slide-wrap">
+<!-- ═══════════ S10 SD-WAN CHAPTER + RAG COMBINED ═══════════ -->
 <div class="slide" id="s10">
   <div class="glow-tl"></div>
   <div class="slide-inner" style="justify-content:space-between;">
-
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;flex:1;align-items:center;">
-
       <div>
         <div class="kicker">Story 2: SD-WAN</div>
         <div class="rule"></div>
@@ -826,7 +874,6 @@ body {
           <span class="chip" style="font-size:12px;">NAC Validate</span>
         </div>
       </div>
-
       <div style="border-left:1px solid var(--c-ln);padding-left:56px;">
         <div class="kicker" style="margin-bottom:12px;">Query Expansion + Parallel Retrieval</div>
         <div style="font-family:var(--f-disp);font-size:80px;font-weight:800;line-height:.92;letter-spacing:-.056em;color:var(--c-t1);">
@@ -838,12 +885,12 @@ body {
           Infrastructure-aware retrieval. The agent understands your environment before it searches it.
         </div>
       </div>
-
     </div>
-
   </div>
 </div>
+</div>
 
+<div class="slide-wrap">
 <!-- ═══════════ S13 SD-WAN LOOP DIAGRAM ═══════════ -->
 <div class="slide slide--diagram" id="s11">
   <div class="glow-tl"></div>
@@ -918,7 +965,9 @@ body {
 
   </div>
 </div>
+</div>
 
+<div class="slide-wrap">
 <!-- ═══════════ S14 BOUNDED AUTONOMY CLOSE ═══════════ -->
 <div class="slide" id="s12" style="background:radial-gradient(ellipse 40% 40% at 15% 15%, rgba(4,159,217,.07), transparent),linear-gradient(160deg, #060f1a 0%, #04090f 60%, #030710 100%);">
   <div class="glow-tl"></div>
@@ -944,6 +993,7 @@ document.fonts.ready.then(function() {
     });
   });
 });
+</div>
 
 function drawFanout() {
   var root = document.getElementById('diag-a-root');
