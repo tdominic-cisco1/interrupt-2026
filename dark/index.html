@@ -359,6 +359,9 @@ body {
 /* ═══════════════════════════════════════════════════════════
    INDIVIDUAL SLIDE STYLES
 ═══════════════════════════════════════════════════════════ */
+#s00 { padding: 0 !important; overflow: hidden; }
+#s00 video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
 #s01 .slide-inner { justify-content: space-between; }
 #s01 .hero { max-width: 1100px; }
 #s01 .cover-title {
@@ -488,6 +491,7 @@ html, body { width: 100%; overflow-x: hidden; }
 })();
 </script>
 <div class="nav">
+  <a href="#s00">00 · Demo</a>
   <a href="#s01">01 · Cover</a>
   <a href="#s02">02 · Production Reality</a>
   <a href="#s03">03 · Full System</a>
@@ -504,6 +508,15 @@ html, body { width: 100%; overflow-x: hidden; }
   <a href="#s09">14 · Close</a>
 </div>
 
+
+<div class="slide-wrap">
+<!-- ═══════════ S00 BOOTH DEMO VIDEO ═══════════ -->
+<div class="slide" id="s00">
+  <video src="../videos/sac-ai-assistant-booth-demo-v2.mp4"
+         autoplay muted loop playsinline preload="auto"
+         aria-label="Cisco × Interrupt 2026 booth demo recording"></video>
+</div>
+</div>
 
 <div class="slide-wrap">
 <!-- ═══════════ S01 COVER ═══════════ -->
